@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Valores y ventajas</title>
+
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+
+    <div id="pageloader" class="pageloader is-left-to-right is-theme"></div>
+    <div id="infraloader" class="infraloader is-active"></div>    
+    <div class="media-wrapper">
+        <!-- Landing page Hero -->
+        <section class="hero">
+            <div class="hero-head">
+    
+                <!-- Cloned navbar -->
+                <!-- Cloned navbar that comes in on scroll -->
+                <nav x-data="initNavbar()"  x-on:scroll.window="scroll()" id="navbar-clone" class="navbar is-fixed is-dark" :class="{
+                        'is-active': scrolled,
+                        '': !scrolled
+                    }">
+                    <div class="container">
+                        <!-- Brand -->
+                        <div class="navbar-brand">
+                            <a href="index.html" class="navbar-item">
+                                <img src="../src/img/logo.png" alt="">
+                                <span class="brand-name">GOOD JOB</span>
+                            </a>
+                            <!-- Responsive toggle -->
+                            <div class="navbar-burger" @click="openMobileMenu()">
+                                <div class="menu-toggle">
+                                    <span class="icon-box-toggle" :class="{
+                                            'active': mobileOpen,
+                                            '': !mobileOpen
+                                        }">
+                                        <span class="rotate">
+                                            <i class="icon-line-top"></i>
+                                            <i class="icon-line-center"></i>
+                                            <i class="icon-line-bottom"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Menu -->
+                        <div id="cloneNavbarMenu" class="navbar-menu" :class="{
+                                'is-active': mobileOpen,
+                                '': !mobileOpen
+                            }">
+                            <div class="navbar-end">
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive is-size-6" href="index.html">Inicio</a>
+                                </div>
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive is-size-6" href="index.html#start">Nosotros</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive is-size-6" href="token.html">Misión</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive is-size-6" href="roadmap.html">Visión</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive is-size-6" href="blog.html">V&V</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- /Cloned navbar -->
+                <!-- Static navbar -->
+                <!-- Static navbar -->
+                <nav x-data="initNavbar()" class="navbar is-light" :class="{
+                        'is-dark-mobile': mobileOpen,
+                        '': !mobileOpen
+                    }">
+                    <div class="container">
+                        <!-- Brand -->
+                        <div class="navbar-brand">
+                            <a href="index.html" class="navbar-item">
+                                <img src="../src/img/logo.png" alt="">
+                                <span class="brand-name">GOOD JOB</span>
+                            </a>
+                            <!-- Responsive toggle -->
+                            <div class="navbar-burger" @click="openMobileMenu()">
+                                <div class="menu-toggle">
+                                    <span class="icon-box-toggle" :class="{
+                                            'active': mobileOpen,
+                                            '': !mobileOpen
+                                        }">
+                                        <span class="rotate">
+                                            <i class="icon-line-top"></i>
+                                            <i class="icon-line-center"></i>
+                                            <i class="icon-line-bottom"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Menu -->
+                        <div id="navbarMenu" class="navbar-menu light-menu" :class="{
+                                'is-active': mobileOpen,
+                                '': !mobileOpen
+                            }">
+                            <div class="navbar-end">
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive is-size-6" href="index.html">Inicio</a>
+                                </div>
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive is-size-6" href="index.html#start">Nosotros</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive is-size-6" href="token.html">Misión</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive is-size-6" href="roadmap.html">Visión</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive is-size-6" href="blog.html">V&V</a>
+                                </div>
+                                <!-- Sign up -->
+                               
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+                <!-- /Static navbar -->
+            </div>
+    
+            <!-- Hero Image and Title -->
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns is-vcentered">
+    
+                        <!-- Landing page Title -->
+                        <div class="column is-5 is-offset-1 landing-caption">
+                            
+                            <h1 class="title is-1 is-light is-semibold is-spaced main-title">Nuestros valores</h1>
+                            <div class="divider is-long"></div>
+    
+                        </div> 
+                        <!-- Hero image -->
+                        
+                    </div>
+                    <div class="columns">
+                        <div class="column is-4">
+                            <h4 class="title is-4 is-tight is-light">Coraje</h4>
+                            <p>La innovación comienza con el cuestionamiento de lo convencional, especialmente ante la incertidumbre o adversidad. Esto sucede cuando tenemos grandes ideas, nos expresamos y somos decididos. </p>
+                        </div>
+                        <div class="column is-2 mar">
+                            <img src="../src/img/coraje.png" alt="" class="mar">
+                        </div>
+                        <div class="column is-4">
+                            <h4 class="title is-4 is-tight is-light">Equidad</h4>
+                            <p>Todas las personas merecen que se les escuche. Esto sucede cuando somos inclusivos y actuamos con integridad. </p>
+                        </div>
+                        <div class="column is-2">
+                            <img src="../src/img/equidad.png" alt="">
+                        </div>
+                    </div> <br>
+                    <div class="columns">
+                        <div class="column is-4">
+                            <h4 class="title is-4 is-tight is-light">Excelencia</h4>
+                            <p>Solo podemos cambiar las vidas de los usuarios cuando, juntos, logramos prestar el mejor servicio. Esto sucede cuando nos enfocamos en aquello que importa.  </p>
+                        </div>
+                        <div class="column is-2 mar">
+                            <img src="../src/img/mano.png" alt="" class="mar">
+                        </div>
+                        <div class="column is-4">
+                            <h4 class="title is-4 is-tight is-light">Respeto</h4>
+                            <p>Reconocer, aceptar y comprender a todos los usuarios que interactúan en la aplicación. </p>
+                        </div>
+                        <div class="column is-2">
+                            <img src="../src/img/respeto.png" alt="">
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column is-4">
+                            <h4 class="title is-4 is-tight is-light">Compromiso</h4>
+                            <p>Solo podemos cambiar las vidas de los usuarios cuando, juntos, logramos prestar el mejor servicio. Esto sucede cuando nos enfocamos en aquello que importa.  </p>
+                        </div>
+                        <div class="column is-2 mar">
+                            <img src="../src/img/compromiso.png" alt="" class="mar">
+                        </div>
+                        <div class="column is-4">
+                            <h4 class="title is-4 is-tight is-light">Integridad</h4>
+                            <p>Actuar de manera ética, honesta, transparente, y con espíritu de servicio, que genere confianza en los usuarios y la comunidad. </p>
+                        </div>
+                        <div class="column is-2">
+                            <img src="../src/img/integridad.png" alt="">
+                        </div>
+                    </div>
+                    <div class="column is-5 is-offset-1 landing-caption">
+                            
+                        <h1 class="title is-1 is-light is-semibold is-spaced main-title">Ventajas competitivas</h1>
+                        <div class="divider is-long"></div>
+                        <!-- Abajo -->
+                    </div> 
+                    <div class="columns">
+                        <div class="column is-3">
+                            <div class="feature">
+                                <img src="../src/img/calidad.png" alt="">
+                                <h4 class="title is-4 is-tight is-light has-text-centered">Calidad</h4>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="feature">
+                                <img src="../src/img/innovacion.png" alt="">
+                                <h4 class="title is-4 is-tight is-light has-text-centered">Innovación</h4>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="feature">
+                                <img src="../src/img/servicio.png" alt="">
+                                <h4 class="title is-4 is-tight is-light has-text-centered">Servicio <br> exclusivo</h4>
+                            </div>
+                        </div>
+                        <div class="column is-3">
+                            <div class="feature">
+                                <img src="../src/img/orientacion.png" alt="">
+                                <h4 class="title is-4 is-tight is-light has-text-centered">Orientación</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column is-half">
+                            <div class="feature">
+                                <img src="../src/img/organizacion.png" alt="">
+                                <h4 class="title is-4 is-tight is-light has-text-centered">Organización</h4>
+                            </div>
+                        </div>
+                        <div class="column is-half">
+                            <div class="feature">
+                                <img src="../src/img/formalidad.png" alt="">
+                                <h4 class="title is-4 is-tight is-light has-text-centered">Formalidad</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+      
+    </div>
+    <footer class="krypton-footer">
+        <div class="container">
+            <!-- Logo -->
+            <div class="footer-logo">
+                <a href="index.html">
+                    <img class="" src="../src/img/logo.png" alt="">
+                    <div class="brand-name">GOODJOB</div>
+                    <!-- <div class="brand-subtitle">Blockchain brought to another level</div> -->
+                </a>
+            </div>
+            
+            <!-- Columns -->
+            <div class="columns footer-columns is-vcentered">
+                <div class="column is-4">
+                    <!-- Links group -->
+                    <ul class="footer-links">
+                        <li>
+                            <a href="index.html">Inicio</a>
+                        </li>
+    
+                        <li>
+                            <a href="index.html#start">NOSOTROS</a>
+                        </li>
+    
+                        
+                    </ul>
+                </div>
+                <!-- Newsletter -->
+                <div class="column is-4">
+                    <div class="subscribe-block">
+                        <form>
+                            <!-- Field -->
+                            <div class="control">
+                                <!-- Special input -->
+                                <input class="krypton-subscribe-input" type="email" name="email" placeholder="">
+                                <button class="subscribe-button">
+                                    <span>Contacto</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Links group -->
+                <div class="column is-4">
+                    <ul class="footer-links">
+                        <li>
+                            <a href="token.html">MISIÓN</a>
+                        </li>
+                        <li>
+                            <a href="roadmap.html">VISIÓN</a>
+                        </li>
+    
+                    </ul>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <p class="k-copyright">© 2021 | GoodJob. All Rights Reserved</p>
+            <br>
+            <!-- Made by -->
+            <p class="coded-by">Designed and Coded by 4Dev</p>
+        </div>
+    </footer>
+    <div x-data="initBackToTop()" x-on:scroll.window="scroll($event)" @click="goTop($event)" id="backtotop"><a href="javascript:" :class="{
+        'visible': scrolled,
+        '': !scrolled
+    }"></a></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="./js/bundle.js"></script>
+
+</body>
+
+</html>
